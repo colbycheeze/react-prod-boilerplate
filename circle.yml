@@ -1,0 +1,29 @@
+machine:
+  timezone: America/Chicago
+  node:
+    version: 6.9.2
+  environment:
+    PATH: "${PATH}:${HOME}/${CIRCLE_PROJECT_REPONAME}/node_modules/.bin"
+
+dependencies:
+  cache_directories:
+    - ~/.cache/yarn
+  pre:
+    - curl -o- -L https://yarnpkg.com/install.sh | bash
+  override:
+    - yarn
+
+test:
+  override:
+    - case $CIRCLE_NODE_INDEX in 0) yarn test:coverage ;; 1) yarn build ;; esac:
+        parallel: true
+
+deployment:
+  staging:
+    branch: develop
+    commands:
+      - yarn deploy:staging
+  production:
+    branch: master
+    commands:
+      - yarn deploy:production

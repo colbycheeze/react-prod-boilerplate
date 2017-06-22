@@ -1,0 +1,32 @@
+exports[`Mount (Enzyme) renders all children, and can interact with lifecycle / synthetic events 1`] = `
+<ExampleOuter
+  name="mount">
+  <div>
+    Outer Element - 
+    mount
+    <ExampleInner>
+      <div
+        onClick={[Function]}>
+        Inner Element
+      </div>
+    </ExampleInner>
+  </div>
+</ExampleOuter>
+`;
+
+exports[`Render (Enzyme) renders the static html in a Cheerio wrapper 1`] = `
+<div>
+  Outer Element - render
+  <div>
+    Inner Element
+  </div>
+</div>
+`;
+
+exports[`Shallow (Enzyme) renders ONLY the current element 1`] = `
+<div>
+  Outer Element - 
+  shallow
+  <ExampleInner />
+</div>
+`;

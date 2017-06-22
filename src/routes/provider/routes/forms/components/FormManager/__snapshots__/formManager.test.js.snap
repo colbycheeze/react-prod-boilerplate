@@ -1,0 +1,883 @@
+exports[`<FormManager /> Shows loader when data is fetching 1`] = `
+<div
+  className="wrapper">
+  <div
+    className="formsHeading">
+    <h1>
+      Fill Forms
+    </h1>
+    <span
+      className="allForms">
+      <Link
+        onlyActiveOnIndex={false}
+        style={Object {}}
+        to="/provider/forms">
+        Pending Forms
+      </Link>
+    </span>
+    <span
+      className="pageDescription">
+      Your forms section is where you can find all of the forms that you have been assigned to complete. You can also generate PDF copies to share with credentialing entities such as hospitals, medical facilities, and insurance payers.
+    </span>
+    <h3>
+      All Forms
+    </h3>
+  </div>
+  <div
+    className="filter">
+    <TextInput
+      className=""
+      danger={false}
+      inputRef={[Function]}
+      isLabelHidden={false}
+      label="Filter Forms and Templates"
+      labelClass=""
+      large={false}
+      leftIconName="filter"
+      onChange={[Function]}
+      placeholder="Filter forms and templates..."
+      primary={false}
+      required={false}
+      success={false}
+      type="search"
+      value=""
+      warning={false} />
+    <Blueprint.Switch
+      checked={false}
+      label="Show archived"
+      onChange={[Function]} />
+    <Blueprint.Switch
+      checked={false}
+      label="Show all form templates"
+      onChange={[Function]} />
+  </div>
+  <LoadingOverlay
+    backdropClassName="whiteOverlay"
+    className=""
+    inline={true}
+    isOpen={true}
+    title="Loading Form Data..." />
+  <div />
+</div>
+`;
+
+exports[`<FormManager /> archived switch is flipped when showArchived is true 1`] = `
+<div
+  className="wrapper">
+  <div
+    className="formsHeading">
+    <h1>
+      Fill Forms
+    </h1>
+    <span
+      className="allForms">
+      <Link
+        onlyActiveOnIndex={false}
+        style={Object {}}
+        to="/provider/forms">
+        Pending Forms
+      </Link>
+    </span>
+    <span
+      className="pageDescription">
+      Your forms section is where you can find all of the forms that you have been assigned to complete. You can also generate PDF copies to share with credentialing entities such as hospitals, medical facilities, and insurance payers.
+    </span>
+    <h3>
+      All Forms
+    </h3>
+  </div>
+  <div
+    className="filter">
+    <TextInput
+      className=""
+      danger={false}
+      inputRef={[Function]}
+      isLabelHidden={false}
+      label="Filter Forms and Templates"
+      labelClass=""
+      large={false}
+      leftIconName="filter"
+      onChange={[Function]}
+      placeholder="Filter forms and templates..."
+      primary={false}
+      required={false}
+      success={false}
+      type="search"
+      value=""
+      warning={false} />
+    <Blueprint.Switch
+      checked={true}
+      label="Show archived"
+      onChange={[Function]} />
+    <Blueprint.Switch
+      checked={false}
+      label="Show all form templates"
+      onChange={[Function]} />
+  </div>
+  <div>
+    <Section
+      label="Global Forms">
+      <Connect(FormTemplate)
+        archived={false}
+        createdAt="2016-12-28T13:30:13.547Z"
+        formData={
+          Object {
+            "fields": Object {
+              "2": Object {
+                "editable": false,
+                "form_field_type": "description_field",
+                "hidden": false,
+                "id": "2",
+                "label": "Attestation acknowledgement",
+                "mappings": Array [],
+                "row": "1",
+                "section": "999",
+                "type": "description",
+                "value": "Once you have reviewed your entries, please click or tap the “Submit” button. A digital copy of your form will automatically be generated and placed in your Files section!
+          
+          If you have any questions or issues, please reach out to the MedSpoke Customer Success team at credentialing@medspoke.com, or (210) 739-1417.",
+              },
+            },
+            "mappings": Object {},
+            "nextGroupId": 1,
+            "nextId": 3,
+            "rows": Object {
+              "1": Object {
+                "fields": Array [
+                  "2",
+                ],
+                "id": "1",
+                "section": "999",
+              },
+            },
+            "sections": Object {
+              "999": Object {
+                "id": "999",
+                "name": "Attestation",
+                "rows": Array [
+                  "1",
+                ],
+                "type": "attestation",
+              },
+            },
+          }
+        }
+        id="1"
+        isGlobal={true}
+        title="Texas Standard Credentialing Application" />
+      <Connect(FormTemplate)
+        archived={false}
+        createdAt="2016-12-28T13:30:13.547Z"
+        formData={
+          Object {
+            "fields": Object {
+              "2": Object {
+                "editable": false,
+                "form_field_type": "description_field",
+                "hidden": false,
+                "id": "2",
+                "label": "Attestation acknowledgement",
+                "mappings": Array [],
+                "row": "1",
+                "section": "999",
+                "type": "description",
+                "value": "Once you have reviewed your entries, please click or tap the “Submit” button. A digital copy of your form will automatically be generated and placed in your Files section!
+          
+          If you have any questions or issues, please reach out to the MedSpoke Customer Success team at credentialing@medspoke.com, or (210) 739-1417.",
+              },
+            },
+            "mappings": Object {},
+            "nextGroupId": 1,
+            "nextId": 3,
+            "rows": Object {
+              "1": Object {
+                "fields": Array [
+                  "2",
+                ],
+                "id": "1",
+                "section": "999",
+              },
+            },
+            "sections": Object {
+              "999": Object {
+                "id": "999",
+                "name": "Attestation",
+                "rows": Array [
+                  "1",
+                ],
+                "type": "attestation",
+              },
+            },
+          }
+        }
+        id="2"
+        isGlobal={true}
+        title="California Credentialing Application" />
+      <Connect(FormTemplate)
+        archived={false}
+        createdAt="2016-12-28T13:30:13.547Z"
+        formData={
+          Object {
+            "fields": Object {
+              "2": Object {
+                "editable": false,
+                "form_field_type": "description_field",
+                "hidden": false,
+                "id": "2",
+                "label": "Attestation acknowledgement",
+                "mappings": Array [],
+                "row": "1",
+                "section": "999",
+                "type": "description",
+                "value": "Once you have reviewed your entries, please click or tap the “Submit” button. A digital copy of your form will automatically be generated and placed in your Files section!
+          
+          If you have any questions or issues, please reach out to the MedSpoke Customer Success team at credentialing@medspoke.com, or (210) 739-1417.",
+              },
+            },
+            "mappings": Object {},
+            "nextGroupId": 1,
+            "nextId": 3,
+            "rows": Object {
+              "1": Object {
+                "fields": Array [
+                  "2",
+                ],
+                "id": "1",
+                "section": "999",
+              },
+            },
+            "sections": Object {
+              "999": Object {
+                "id": "999",
+                "name": "Attestation",
+                "rows": Array [
+                  "1",
+                ],
+                "type": "attestation",
+              },
+            },
+          }
+        }
+        id="5"
+        isGlobal={true}
+        title="Template with no copies" />
+      <Connect(FormTemplate)
+        archived={true}
+        createdAt="2016-12-28T13:30:13.547Z"
+        formData={
+          Object {
+            "fields": Object {
+              "2": Object {
+                "editable": false,
+                "form_field_type": "description_field",
+                "hidden": false,
+                "id": "2",
+                "label": "Attestation acknowledgement",
+                "mappings": Array [],
+                "row": "1",
+                "section": "999",
+                "type": "description",
+                "value": "Once you have reviewed your entries, please click or tap the “Submit” button. A digital copy of your form will automatically be generated and placed in your Files section!
+          
+          If you have any questions or issues, please reach out to the MedSpoke Customer Success team at credentialing@medspoke.com, or (210) 739-1417.",
+              },
+            },
+            "mappings": Object {},
+            "nextGroupId": 1,
+            "nextId": 3,
+            "rows": Object {
+              "1": Object {
+                "fields": Array [
+                  "2",
+                ],
+                "id": "1",
+                "section": "999",
+              },
+            },
+            "sections": Object {
+              "999": Object {
+                "id": "999",
+                "name": "Attestation",
+                "rows": Array [
+                  "1",
+                ],
+                "type": "attestation",
+              },
+            },
+          }
+        }
+        id="6"
+        isGlobal={true}
+        title="Template with no copies" />
+    </Section>
+    <Section
+      label="Entity Forms">
+      <Connect(FormTemplate)
+        archived={false}
+        createdAt="2016-12-28T13:30:13.547Z"
+        formData={
+          Object {
+            "fields": Object {
+              "2": Object {
+                "editable": false,
+                "form_field_type": "description_field",
+                "hidden": false,
+                "id": "2",
+                "label": "Attestation acknowledgement",
+                "mappings": Array [],
+                "row": "1",
+                "section": "999",
+                "type": "description",
+                "value": "Once you have reviewed your entries, please click or tap the “Submit” button. A digital copy of your form will automatically be generated and placed in your Files section!
+          
+          If you have any questions or issues, please reach out to the MedSpoke Customer Success team at credentialing@medspoke.com, or (210) 739-1417.",
+              },
+            },
+            "mappings": Object {},
+            "nextGroupId": 1,
+            "nextId": 3,
+            "rows": Object {
+              "1": Object {
+                "fields": Array [
+                  "2",
+                ],
+                "id": "1",
+                "section": "999",
+              },
+            },
+            "sections": Object {
+              "999": Object {
+                "id": "999",
+                "name": "Attestation",
+                "rows": Array [
+                  "1",
+                ],
+                "type": "attestation",
+              },
+            },
+          }
+        }
+        id="3"
+        isGlobal={false}
+        title="Oscar Payer Network Enrollment Application" />
+      <Connect(FormTemplate)
+        archived={false}
+        createdAt="2016-12-28T13:30:13.547Z"
+        formData={
+          Object {
+            "fields": Object {
+              "2": Object {
+                "editable": false,
+                "form_field_type": "description_field",
+                "hidden": false,
+                "id": "2",
+                "label": "Attestation acknowledgement",
+                "mappings": Array [],
+                "row": "1",
+                "section": "999",
+                "type": "description",
+                "value": "Once you have reviewed your entries, please click or tap the “Submit” button. A digital copy of your form will automatically be generated and placed in your Files section!
+          
+          If you have any questions or issues, please reach out to the MedSpoke Customer Success team at credentialing@medspoke.com, or (210) 739-1417.",
+              },
+            },
+            "mappings": Object {},
+            "nextGroupId": 1,
+            "nextId": 3,
+            "rows": Object {
+              "1": Object {
+                "fields": Array [
+                  "2",
+                ],
+                "id": "1",
+                "section": "999",
+              },
+            },
+            "sections": Object {
+              "999": Object {
+                "id": "999",
+                "name": "Attestation",
+                "rows": Array [
+                  "1",
+                ],
+                "type": "attestation",
+              },
+            },
+          }
+        }
+        id="4"
+        isGlobal={false}
+        title="MyER Texas Credentialing Application" />
+    </Section>
+  </div>
+</div>
+`;
+
+exports[`<FormManager /> renders filtered list 1`] = `
+<div
+  className="wrapper">
+  <div
+    className="formsHeading">
+    <h1>
+      Fill Forms
+    </h1>
+    <span
+      className="allForms">
+      <Link
+        onlyActiveOnIndex={false}
+        style={Object {}}
+        to="/provider/forms">
+        Pending Forms
+      </Link>
+    </span>
+    <span
+      className="pageDescription">
+      Your forms section is where you can find all of the forms that you have been assigned to complete. You can also generate PDF copies to share with credentialing entities such as hospitals, medical facilities, and insurance payers.
+    </span>
+    <h3>
+      All Forms
+    </h3>
+  </div>
+  <div
+    className="filter">
+    <TextInput
+      className=""
+      danger={false}
+      inputRef={[Function]}
+      isLabelHidden={false}
+      label="Filter Forms and Templates"
+      labelClass=""
+      large={false}
+      leftIconName="filter"
+      onChange={[Function]}
+      placeholder="Filter forms and templates..."
+      primary={false}
+      required={false}
+      success={false}
+      type="search"
+      value="te"
+      warning={false} />
+    <Blueprint.Switch
+      checked={false}
+      label="Show archived"
+      onChange={[Function]} />
+    <Blueprint.Switch
+      checked={false}
+      label="Show all form templates"
+      onChange={[Function]} />
+  </div>
+  <div>
+    <Section
+      label="Filtered Form Templates">
+      <Connect(FormTemplate)
+        decoratedTitle="<b>T</b><b>e</b>xas Standard Credentialing Application"
+        id="1"
+        title="Texas Standard Credentialing Application" />
+      <Connect(FormTemplate)
+        decoratedTitle="MyER <b>T</b><b>e</b>xas Credentialing Application"
+        id="4"
+        title="MyER Texas Credentialing Application" />
+      <Connect(FormTemplate)
+        decoratedTitle="<b>T</b><b>e</b>mplate with no copies"
+        id="5"
+        title="Template with no copies" />
+      <Connect(FormTemplate)
+        decoratedTitle="<b>T</b><b>e</b>mplate with no copies"
+        id="6"
+        title="Template with no copies" />
+      <Connect(FormTemplate)
+        decoratedTitle="Oscar Payer Ne<b>t</b>work <b>E</b>nrollment Application"
+        id="3"
+        title="Oscar Payer Network Enrollment Application" />
+    </Section>
+    <Section
+      label="Filtered Forms">
+      <FlipMovePropConverter
+        delay={0}
+        disableAllAnimations={false}
+        duration={250}
+        easing="ease-in-out"
+        enterAnimation="accordianVertical"
+        getPosition={[Function]}
+        leaveAnimation="accordianVertical"
+        maintainContainerHeight={false}
+        staggerDelayBy={20}
+        staggerDurationBy={20}
+        typeName="div">
+        <Connect(withRouter(Form))
+          decoratedTitle="<b>T</b><b>e</b>st Test"
+          id="2"
+          isFilteredResult={true} />
+        <Connect(withRouter(Form))
+          decoratedTitle="<b>T</b><b>e</b>st Test"
+          id="4"
+          isFilteredResult={true} />
+        <Connect(withRouter(Form))
+          decoratedTitle="<b>T</b><b>e</b>st Test"
+          id="6"
+          isFilteredResult={true} />
+        <Connect(withRouter(Form))
+          decoratedTitle="<b>T</b><b>e</b>st Test"
+          id="8"
+          isFilteredResult={true} />
+        <Connect(withRouter(Form))
+          decoratedTitle="A Form <b>T</b>hat is Archiv<b>e</b>d"
+          id="9"
+          isFilteredResult={true} />
+      </FlipMovePropConverter>
+    </Section>
+  </div>
+</div>
+`;
+
+exports[`<FormManager /> renders non archived forms 1`] = `
+<div
+  className="wrapper">
+  <div
+    className="formsHeading">
+    <h1>
+      Fill Forms
+    </h1>
+    <span
+      className="allForms">
+      <Link
+        onlyActiveOnIndex={false}
+        style={Object {}}
+        to="/provider/forms">
+        Pending Forms
+      </Link>
+    </span>
+    <span
+      className="pageDescription">
+      Your forms section is where you can find all of the forms that you have been assigned to complete. You can also generate PDF copies to share with credentialing entities such as hospitals, medical facilities, and insurance payers.
+    </span>
+    <h3>
+      All Forms
+    </h3>
+  </div>
+  <div
+    className="filter">
+    <TextInput
+      className=""
+      danger={false}
+      inputRef={[Function]}
+      isLabelHidden={false}
+      label="Filter Forms and Templates"
+      labelClass=""
+      large={false}
+      leftIconName="filter"
+      onChange={[Function]}
+      placeholder="Filter forms and templates..."
+      primary={false}
+      required={false}
+      success={false}
+      type="search"
+      value=""
+      warning={false} />
+    <Blueprint.Switch
+      checked={false}
+      label="Show archived"
+      onChange={[Function]} />
+    <Blueprint.Switch
+      checked={false}
+      label="Show all form templates"
+      onChange={[Function]} />
+  </div>
+  <div>
+    <Section
+      label="Global Forms">
+      <Connect(FormTemplate)
+        archived={false}
+        createdAt="2016-12-28T13:30:13.547Z"
+        formData={
+          Object {
+            "fields": Object {
+              "2": Object {
+                "editable": false,
+                "form_field_type": "description_field",
+                "hidden": false,
+                "id": "2",
+                "label": "Attestation acknowledgement",
+                "mappings": Array [],
+                "row": "1",
+                "section": "999",
+                "type": "description",
+                "value": "Once you have reviewed your entries, please click or tap the “Submit” button. A digital copy of your form will automatically be generated and placed in your Files section!
+          
+          If you have any questions or issues, please reach out to the MedSpoke Customer Success team at credentialing@medspoke.com, or (210) 739-1417.",
+              },
+            },
+            "mappings": Object {},
+            "nextGroupId": 1,
+            "nextId": 3,
+            "rows": Object {
+              "1": Object {
+                "fields": Array [
+                  "2",
+                ],
+                "id": "1",
+                "section": "999",
+              },
+            },
+            "sections": Object {
+              "999": Object {
+                "id": "999",
+                "name": "Attestation",
+                "rows": Array [
+                  "1",
+                ],
+                "type": "attestation",
+              },
+            },
+          }
+        }
+        id="1"
+        isGlobal={true}
+        title="Texas Standard Credentialing Application" />
+      <Connect(FormTemplate)
+        archived={false}
+        createdAt="2016-12-28T13:30:13.547Z"
+        formData={
+          Object {
+            "fields": Object {
+              "2": Object {
+                "editable": false,
+                "form_field_type": "description_field",
+                "hidden": false,
+                "id": "2",
+                "label": "Attestation acknowledgement",
+                "mappings": Array [],
+                "row": "1",
+                "section": "999",
+                "type": "description",
+                "value": "Once you have reviewed your entries, please click or tap the “Submit” button. A digital copy of your form will automatically be generated and placed in your Files section!
+          
+          If you have any questions or issues, please reach out to the MedSpoke Customer Success team at credentialing@medspoke.com, or (210) 739-1417.",
+              },
+            },
+            "mappings": Object {},
+            "nextGroupId": 1,
+            "nextId": 3,
+            "rows": Object {
+              "1": Object {
+                "fields": Array [
+                  "2",
+                ],
+                "id": "1",
+                "section": "999",
+              },
+            },
+            "sections": Object {
+              "999": Object {
+                "id": "999",
+                "name": "Attestation",
+                "rows": Array [
+                  "1",
+                ],
+                "type": "attestation",
+              },
+            },
+          }
+        }
+        id="2"
+        isGlobal={true}
+        title="California Credentialing Application" />
+      <Connect(FormTemplate)
+        archived={false}
+        createdAt="2016-12-28T13:30:13.547Z"
+        formData={
+          Object {
+            "fields": Object {
+              "2": Object {
+                "editable": false,
+                "form_field_type": "description_field",
+                "hidden": false,
+                "id": "2",
+                "label": "Attestation acknowledgement",
+                "mappings": Array [],
+                "row": "1",
+                "section": "999",
+                "type": "description",
+                "value": "Once you have reviewed your entries, please click or tap the “Submit” button. A digital copy of your form will automatically be generated and placed in your Files section!
+          
+          If you have any questions or issues, please reach out to the MedSpoke Customer Success team at credentialing@medspoke.com, or (210) 739-1417.",
+              },
+            },
+            "mappings": Object {},
+            "nextGroupId": 1,
+            "nextId": 3,
+            "rows": Object {
+              "1": Object {
+                "fields": Array [
+                  "2",
+                ],
+                "id": "1",
+                "section": "999",
+              },
+            },
+            "sections": Object {
+              "999": Object {
+                "id": "999",
+                "name": "Attestation",
+                "rows": Array [
+                  "1",
+                ],
+                "type": "attestation",
+              },
+            },
+          }
+        }
+        id="5"
+        isGlobal={true}
+        title="Template with no copies" />
+      <Connect(FormTemplate)
+        archived={true}
+        createdAt="2016-12-28T13:30:13.547Z"
+        formData={
+          Object {
+            "fields": Object {
+              "2": Object {
+                "editable": false,
+                "form_field_type": "description_field",
+                "hidden": false,
+                "id": "2",
+                "label": "Attestation acknowledgement",
+                "mappings": Array [],
+                "row": "1",
+                "section": "999",
+                "type": "description",
+                "value": "Once you have reviewed your entries, please click or tap the “Submit” button. A digital copy of your form will automatically be generated and placed in your Files section!
+          
+          If you have any questions or issues, please reach out to the MedSpoke Customer Success team at credentialing@medspoke.com, or (210) 739-1417.",
+              },
+            },
+            "mappings": Object {},
+            "nextGroupId": 1,
+            "nextId": 3,
+            "rows": Object {
+              "1": Object {
+                "fields": Array [
+                  "2",
+                ],
+                "id": "1",
+                "section": "999",
+              },
+            },
+            "sections": Object {
+              "999": Object {
+                "id": "999",
+                "name": "Attestation",
+                "rows": Array [
+                  "1",
+                ],
+                "type": "attestation",
+              },
+            },
+          }
+        }
+        id="6"
+        isGlobal={true}
+        title="Template with no copies" />
+    </Section>
+    <Section
+      label="Entity Forms">
+      <Connect(FormTemplate)
+        archived={false}
+        createdAt="2016-12-28T13:30:13.547Z"
+        formData={
+          Object {
+            "fields": Object {
+              "2": Object {
+                "editable": false,
+                "form_field_type": "description_field",
+                "hidden": false,
+                "id": "2",
+                "label": "Attestation acknowledgement",
+                "mappings": Array [],
+                "row": "1",
+                "section": "999",
+                "type": "description",
+                "value": "Once you have reviewed your entries, please click or tap the “Submit” button. A digital copy of your form will automatically be generated and placed in your Files section!
+          
+          If you have any questions or issues, please reach out to the MedSpoke Customer Success team at credentialing@medspoke.com, or (210) 739-1417.",
+              },
+            },
+            "mappings": Object {},
+            "nextGroupId": 1,
+            "nextId": 3,
+            "rows": Object {
+              "1": Object {
+                "fields": Array [
+                  "2",
+                ],
+                "id": "1",
+                "section": "999",
+              },
+            },
+            "sections": Object {
+              "999": Object {
+                "id": "999",
+                "name": "Attestation",
+                "rows": Array [
+                  "1",
+                ],
+                "type": "attestation",
+              },
+            },
+          }
+        }
+        id="3"
+        isGlobal={false}
+        title="Oscar Payer Network Enrollment Application" />
+      <Connect(FormTemplate)
+        archived={false}
+        createdAt="2016-12-28T13:30:13.547Z"
+        formData={
+          Object {
+            "fields": Object {
+              "2": Object {
+                "editable": false,
+                "form_field_type": "description_field",
+                "hidden": false,
+                "id": "2",
+                "label": "Attestation acknowledgement",
+                "mappings": Array [],
+                "row": "1",
+                "section": "999",
+                "type": "description",
+                "value": "Once you have reviewed your entries, please click or tap the “Submit” button. A digital copy of your form will automatically be generated and placed in your Files section!
+          
+          If you have any questions or issues, please reach out to the MedSpoke Customer Success team at credentialing@medspoke.com, or (210) 739-1417.",
+              },
+            },
+            "mappings": Object {},
+            "nextGroupId": 1,
+            "nextId": 3,
+            "rows": Object {
+              "1": Object {
+                "fields": Array [
+                  "2",
+                ],
+                "id": "1",
+                "section": "999",
+              },
+            },
+            "sections": Object {
+              "999": Object {
+                "id": "999",
+                "name": "Attestation",
+                "rows": Array [
+                  "1",
+                ],
+                "type": "attestation",
+              },
+            },
+          }
+        }
+        id="4"
+        isGlobal={false}
+        title="MyER Texas Credentialing Application" />
+    </Section>
+  </div>
+</div>
+`;

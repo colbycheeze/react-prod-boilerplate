@@ -1,0 +1,44 @@
+@import '~style/colors';
+
+.wrapper {
+  display: flex;
+  height: 100%;
+  width: 100%;
+  background-color: $primary;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  text-align: center;
+  background: linear-gradient(to bottom, $primary 0%,$dark-blue 100%);
+
+  a {
+    color: white;
+    text-decoration: underline;
+  }
+}
+
+.logo {
+  margin-bottom: 3rem;
+  width: 90px;
+  height: 91px;
+}
+
+.error {
+  border-bottom: 3px solid white;
+  padding: 0 8rem 3rem;
+}
+
+.code {
+  font-size: 9rem;
+  font-weight: 900;
+  line-height: 1.2;
+}
+
+.message {
+  font-size: 4rem;
+}
+
+.options {
+  padding: 3rem 3rem 15rem;
+  font-size: 1.5rem;
+}

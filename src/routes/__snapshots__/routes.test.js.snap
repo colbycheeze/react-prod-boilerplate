@@ -1,0 +1,36 @@
+exports[`routes renders 404 page if no route matches 1`] = `
+<div
+  id="app-wrapper">
+  <div
+    class="wrapper">
+    <div
+      class="content">
+      <img
+        alt="Medspoke Logo"
+        class="logo"
+        src="test-file-stub" />
+      <div
+        class="error">
+        <div
+          class="code">
+          404
+        </div>
+        <div
+          class="message">
+          Page Not Found
+        </div>
+      </div>
+      <div
+        class="options">
+        <div>
+          Try going back or visiting the 
+          <a
+            href="/provider">
+            dashboard
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

@@ -1,0 +1,176 @@
+@import "~style/colors";
+
+.wrapper {
+  // 1px on top to fix spacing issue
+  padding: 1rem 2rem 0;
+  max-width: 1040px;
+  margin: 0 auto;
+
+  h1 {
+    font-size: 2.25rem;
+  }
+}
+
+.formsHeading {
+  position: relative;
+}
+
+.allForms {
+  position: absolute;
+  top: 1rem;
+  right: 0;
+  font-size: 1.2rem;
+
+  // TODO: optimize full forms manager to allow for mobile use as well
+  // For now, hide toggle link to all forms on mobile
+  @media screen and (max-width: 678px){
+    display: none;
+  }
+}
+
+.pageDescription {
+  display: block;
+  margin-bottom: 2rem;
+}
+
+.filter {
+  margin: 1rem 0 2rem;
+  width: 75%;
+  min-width: 650px;
+  display: flex;
+  align-items: flex-end;
+
+  :global .pt-label {
+    flex: 1;
+    margin-right: 2rem;
+    margin-bottom: 0;
+  }
+
+  :global .pt-switch {
+    margin: 0;
+    margin-right: 2rem;
+  }
+}
+
+// ------------------------------------
+// Dialogs
+// ------------------------------------
+.disclaimer {
+  color: #555;
+  margin: 3rem 0 2rem;
+}
+
+.inputWrapper {
+  width: 100%;
+
+  span {
+    font-style: italic;
+  }
+
+  input {
+    height: 40px;
+    line-height: 40px;
+  }
+}
+
+.dialogButtonWrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.prompt {
+  margin-bottom: 2rem;
+}
+
+.nest {
+  margin: 0 3rem;
+}
+
+.pendingForms {
+  margin-top: 1rem;
+  flex-flow: column nowrap;
+  justify-content: space-between;
+}
+
+.pendingFormsHeader {
+  display: flex;
+  flex-direction: row;
+  border-bottom: 2px solid $medspoke-dark;
+  padding-bottom: 0.2rem;
+
+  span {
+    text-transform: uppercase;
+    font-size: 0.8rem;
+  }
+}
+
+.pendingFormRow {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  border-bottom: 1px solid $medspoke-light;
+  span {
+    height: 4rem;
+    display: flex;
+    align-items: center;
+  }
+
+  &:hover {
+    background: $medspoke-ultra-light;
+  }
+}
+
+.nameCol {
+  flex-grow: 5;
+  flex-basis: 0;
+  .icon {
+    margin-right: 0.5rem;
+    color: $medspoke-medium;
+  }
+}
+
+.assignedCol {
+  flex-grow: 1;
+  flex-basis: 0;
+  display: flex;
+  justify-content: center;
+}
+
+.statusCol {
+  flex-grow: 1;
+  flex-basis: 0;
+  display: flex;
+  justify-content: center;
+}
+
+span.completionStatus {
+  display: inline-block;
+  height: 0.5rem;
+  width: 0.5rem;
+  border-radius: 100%;
+  margin-right: 0.5rem;
+  background: $intent-danger;
+}
+
+// Hide assigngedCol on mobile
+@media screen and (max-width: 678px){
+  span.assignedCol {
+    display: none;
+  }
+  
+  .statusCol{
+    flex-grow: 2;
+  }
+  .pageSubtitle{
+    font-size: 1.2rem;
+  }
+  span.nameCol{
+    padding-right: 0.4rem;
+  }
+}
+
+@media screen and (max-width: 338px){
+  .pageSubtitle{
+    font-size: 1.1rem;
+  }
+}

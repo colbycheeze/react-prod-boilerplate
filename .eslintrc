@@ -1,0 +1,84 @@
+// See the following packages for details:
+// - https://github.com/yannickcr/eslint-plugin-react
+
+{
+  "plugins": [
+    "react"
+  ],
+
+  "extends": [
+    "eslint:recommended",
+    "rallycoding",
+    "plugin:react/all"
+  ],
+
+  "parser": "babel-eslint",
+  "parserOptions": {
+    "sourceType": "module",
+    "allowImportExportEverywhere": true,
+    "ecmaFeatures": {
+      "jsx": true
+    }
+  },
+
+  "env"     : {
+    "browser" : true,
+    "jasmine": true,
+    "jest": true,
+  },
+
+  "globals" : {
+    "shallow"             : false,
+    "mount"               : false,
+    "render"              : false,
+    "__DEV__"             : false,
+    "__PROD__"            : false,
+    "__TEST__"            : false,
+    "__DEBUG__"           : false,
+    "__API_ROOT__"        : false,
+    "__GA_TRACKING_ID__"  : false,
+  },
+
+  "rules": {
+    // https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-filename-extension.md
+    "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
+
+    /*
+      https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/forbid-component-props.md
+      This is a good rule in general, but it is not always applicable.
+      An example is the Link component from react-router
+      Learn more here:
+      https://brigade.engineering/don-t-pass-css-classes-between-components-e9f7ab192785#.pqlpmjsia
+    */
+    "react/forbid-component-props": 0, // default to a warning,
+
+    // https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/no-set-state.md
+    // we definitely want to use component state
+    "react/no-set-state": 0,
+    "react/jsx-max-props-per-line": [2, {maximum: 3}],
+    "react/jsx-sort-props": [0],
+    "react/sort-prop-types": [0],
+    "react/jsx-no-literals": [0],
+    "react/no-danger": 1,
+    "react/prefer-stateless-function": [2, { "ignorePureComponents": true }],
+    "react/no-array-index-key": 1,
+    "jsx-a11y/label-has-for": [1], // This janks up when you wrap an input with label
+
+    // TODO: This causes problems until we figure out how to tell eslint src/ is a root import
+    "import/no-unresolved": 0,
+    "import/no-named-as-default": 0,
+
+    // not able to affect objects returned from the api without a lot of extra work
+    // warning will suffice for now, since it can be ignored if this is the case
+    "camelcase": 1,
+
+    "import/no-extraneous-dependencies": [0],
+    "semi": ["error", "never"],
+    "max-len": 1,
+    "comma-dangle": ["error", "always-multiline"],
+    "brace-style": ["error", "1tbs", {"allowSingleLine": true}],
+
+    "no-console": ["error", { "allow": ["warn", "error"] }],
+    "no-trailing-spaces": 2
+  }
+}

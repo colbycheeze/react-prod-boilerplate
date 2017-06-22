@@ -1,0 +1,9 @@
+- yarn or NPM
+- Flow
+- Prettier?
+- css modules? css javascript? (something that works well with Native)
+- Observables? Sagas? Apollo?
+- Newest React Router
+- Travis / CircleCI
+- Lambdas?
+- Node

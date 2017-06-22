@@ -1,0 +1,10 @@
+/build
+/.idea
+/node_modules
+bundle.js
+npm-debug.log
+.vscode
+.DS_Store
+coverage
+/.out
+webpack-assets.json
