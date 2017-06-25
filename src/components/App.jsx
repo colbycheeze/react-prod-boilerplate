@@ -1,22 +1,12 @@
-import React, { PureComponent, PropTypes as PT } from 'react'
-import HTML5Backend from 'react-dnd-html5-backend'
-import { DragDropContext } from 'react-dnd'
-import { FocusStyleManager } from '@blueprintjs/core'
+import React, { PureComponent } from 'react';
+import PT from 'prop-types';
 
-// details at http://blueprintjs.com/docs/#a11y.focus
-FocusStyleManager.onlyShowFocusOnTabs()
-
-class App extends PureComponent {
-  static propTypes = {
-    children: PT.element.isRequired,
-  }
+export default class App extends PureComponent {
   render() {
     return (
       <div id="app-wrapper">
-        {this.props.children}
+        <h1>Yo</h1>
       </div>
-    )
+    );
   }
 }
-
-export default DragDropContext(HTML5Backend)(App)

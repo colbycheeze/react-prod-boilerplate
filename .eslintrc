@@ -73,7 +73,7 @@
     "camelcase": 1,
 
     "import/no-extraneous-dependencies": [0],
-    "semi": ["error", "never"],
+    "semi": ["error", "always"],
     "max-len": 1,
     "comma-dangle": ["error", "always-multiline"],
     "brace-style": ["error", "1tbs", {"allowSingleLine": true}],

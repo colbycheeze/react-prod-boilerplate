@@ -1,4 +1,3 @@
-- yarn or NPM
 - Flow
 - Prettier?
 - css modules? css javascript? (something that works well with Native)

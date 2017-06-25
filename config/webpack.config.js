@@ -1,19 +1,20 @@
-const path = require('path')
-const webpack = require('webpack')
-const S3Plugin = require('webpack-s3-plugin')
-const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer')
-const HtmlWebpackPlugin = require('html-webpack-plugin')
-const ExtractTextPlugin = require('extract-text-webpack-plugin')
-const CompressionPlugin = require('compression-webpack-plugin')
-const ScriptExtHtmlWebpackPlugin = require('script-ext-html-webpack-plugin')
-const WebpackMd5Hash = require('webpack-md5-hash')
-const cssnano = require('cssnano')
+const path = require('path');
+const webpack = require('webpack');
+const S3Plugin = require('webpack-s3-plugin');
+const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const CompressionPlugin = require('compression-webpack-plugin');
+const ScriptExtHtmlWebpackPlugin = require('script-ext-html-webpack-plugin');
+const FlowStatusWebpackPlugin = require('flow-status-webpack-plugin');
+const WebpackMd5Hash = require('webpack-md5-hash');
+const cssnano = require('cssnano');
 
-const BASE_PATH = '..'
-const resolvePath = subPath => path.resolve(__dirname, `${BASE_PATH}/${subPath}`)
+const BASE_PATH = '..';
+const resolvePath = subPath => path.resolve(__dirname, `${BASE_PATH}/${subPath}`);
 
 module.exports = config => {
-  const NODE_ENV = process.env.NODE_ENV || 'development'
+  const NODE_ENV = process.env.NODE_ENV || 'development';
 
   /* eslint-disable */
   const __DEV__ = NODE_ENV === 'development'
@@ -22,7 +23,7 @@ module.exports = config => {
   /* eslint-enable */
 
   if (!(__DEV__ || __PROD__ || __TEST__)) {
-    throw new Error(`Unknown NODE_ENV: ${NODE_ENV}.`)
+    throw new Error(`Unknown NODE_ENV: ${NODE_ENV}.`);
   }
 
   /*
@@ -40,17 +41,17 @@ module.exports = config => {
     __DEBUG__: config.debug,
     __API_ROOT__: JSON.stringify(config.apiUrl || process.env.apiUrl || 'http://localhost:3000'),
     __GA_TRACKING_ID__: JSON.stringify(process.env.gaTrackingID),
-  }
+  };
 
   // eslint-disable-next-line no-underscore-dangle
-  console.log(`Using ${globals.__API_ROOT__} for api calls`)
+  console.log(`Using ${globals.__API_ROOT__} for api calls`);
 
   const paths = {
     build: resolvePath('build'),
     src: resolvePath('src'),
     styles: resolvePath('src/style'),
     images: resolvePath('src/images'),
-  }
+  };
 
   const rules = [
     // ------------------------------------
@@ -64,26 +65,26 @@ module.exports = config => {
         loader: 'babel-loader',
         options: {
           cacheDirectory: true,
-          presets: [['es2015', { modules: false }], 'react', 'stage-1'],
+          presets: [['es2015', { modules: false }], 'react', 'stage-1', 'flow'],
           plugins: ['transform-runtime', 'lodash'],
         },
       }],
     },
-  ]
+  ];
 
   const sassLoader = {
     loader: 'sass-loader',
     options: {
       sourceMap: config.sourceMap,
     },
-  }
+  };
   const baseCSSLoader = {
     loader: 'css-loader',
     options: {
       minimize: config.optimize,
       sourceMap: config.sourceMap,
     },
-  }
+  };
   // ------------------------------------
   // Global Styles
   // ------------------------------------
@@ -100,13 +101,13 @@ module.exports = config => {
         ],
         publicPath: '/',
       }),
-    })
+    });
   } else {
     rules.push({
       test: /\.scss$/,
       include: paths.styles,
       use: ['style-loader', baseCSSLoader, 'postcss-loader', sassLoader],
-    })
+    });
   }
   // ------------------------------------
   // CSS Modules
@@ -120,7 +121,7 @@ module.exports = config => {
       importLoaders: 1,
       localIdentName: '[name]__[local]__[hash:base64:5]',
     },
-  }
+  };
   if (config.extractText) {
     rules.push({
       test: /\.scss$/,
@@ -134,13 +135,13 @@ module.exports = config => {
         ],
         publicPath: '/',
       }),
-    })
+    });
   } else {
     rules.push({
       test: /\.scss$/,
       exclude: paths.styles,
       use: ['style-loader', cssModulesLoader, 'postcss-loader', sassLoader],
-    })
+    });
   }
 
 
@@ -157,7 +158,7 @@ module.exports = config => {
         mimetype,
       },
     }],
-  })
+  });
 
   rules.push(
     createFontLoader(/\.woff(\?.*)?$/, 'application/font-woff'),
@@ -177,12 +178,14 @@ module.exports = config => {
         },
       }],
     }
-  )
+  );
 
   // ------------------------------------
   // Plugins
   // ------------------------------------
   const plugins = [
+    new FlowStatusWebpackPlugin(),
+
     // Ensure any predefined globals are available throughout our project
     new webpack.DefinePlugin(globals),
 
@@ -230,10 +233,10 @@ module.exports = config => {
         collapseWhitespace: config.optimize,
       },
     }),
-  ]
+  ];
 
   if (config.analyze) {
-    plugins.push(new BundleAnalyzerPlugin())
+    plugins.push(new BundleAnalyzerPlugin());
   }
 
   if (__DEV__) {
@@ -241,7 +244,7 @@ module.exports = config => {
       new webpack.NamedModulesPlugin(),
       new webpack.HotModuleReplacementPlugin(),
       new webpack.NoEmitOnErrorsPlugin()
-    )
+    );
   }
 
   if (config.extractText) {
@@ -249,7 +252,7 @@ module.exports = config => {
       filename: '[name]-[contenthash].css',
       allChunks: true,
       disable: false,
-    }))
+    }));
   }
 
   if (config.optimize) {
@@ -300,15 +303,15 @@ module.exports = config => {
         threshold: 10240,
         minRatio: 0.8,
       })
-    )
+    );
   }
 
   if (process.env.deployLocation) {
-    const upperLocation = process.env.deployLocation.toUpperCase()
+    const upperLocation = process.env.deployLocation.toUpperCase();
 
     if (process.env[`AWS_REACT_${upperLocation}_ACCESS_KEY_ID`]) {
-      console.log('Deploy Initiated ---------')
-      console.log(`Deploying to ${process.env.deployLocation} under bucket: ${process.env.S3Bucket}`)
+      console.log('Deploy Initiated ---------');
+      console.log(`Deploying to ${process.env.deployLocation} under bucket: ${process.env.S3Bucket}`);
 
       plugins.push(new S3Plugin({
         directory: paths.build,
@@ -319,16 +322,16 @@ module.exports = config => {
         s3UploadOptions: {
           Bucket: process.env.S3Bucket,
           ContentEncoding(fileName) {
-            if (/\.gz/.test(fileName)) return 'gzip'
+            if (/\.gz/.test(fileName)) return 'gzip';
           },
         },
         cloudfrontInvalidateOptions: {
           DistributionId: process.env[`AWS_REACT_${upperLocation}_CLOUDFRONT_DIST_ID`],
           Items: ['/*'],
         },
-      }))
+      }));
     } else {
-      console.warn('Required env variable missing: ', `AWS_REACT_${upperLocation}_ACCESS_KEY_ID`)
+      console.warn('Required env variable missing: ', `AWS_REACT_${upperLocation}_ACCESS_KEY_ID`);
     }
   }
 
@@ -351,12 +354,12 @@ module.exports = config => {
     up a bit since creating them takes longer.
   */
   const chooseDevtool = () => {
-    if (config.devtool) return config.devtool
-    if (config.debug) return 'source-map'
-    if (__PROD__) return 'source-map'
-    if (__DEV__) return 'eval-source-map'
-    return false
-  }
+    if (config.devtool) return config.devtool;
+    if (config.debug) return 'source-map';
+    if (__PROD__) return 'source-map';
+    if (__DEV__) return 'eval-source-map';
+    return false;
+  };
 
   return {
     devtool: chooseDevtool(),
@@ -389,5 +392,5 @@ module.exports = config => {
     },
     module: { rules },
     plugins,
-  }
-}
+  };
+};

@@ -1,0 +1,11 @@
+exports[`<Something /> Shows a default thing on load 1`] = `
+<div>
+  Something: 
+  Test Thing
+  <br />
+  <button
+    onClick={[Function]}>
+    Do Something
+  </button>
+</div>
+`;
